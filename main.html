@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh's Important Question</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            width: 100px;
+            position: relative;
+        }
+        .yes-btn {
+            background-color: green;
+            color: white;
+        }
+        .no-btn {
+            background-color: red;
+            color: white;
+        }
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: gray;
+        }
+        @media (max-width: 500px) {
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            button {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Do you want me to come tomorrow?</h2>
+        <div class="buttons">
+            <button class="yes-btn" id="yesBtn" onmouseover="moveButton()">Yes</button>
+            <button class="no-btn" onclick="showMessage()">No</button>
+        </div>
+        <p id="response" class="message"></p>
+    </div>
+
+    <div class="footer">Made with ❤️ by Ashutosh</div>
+
+    <script>
+        function moveButton() {
+            let yesBtn = document.getElementById("yesBtn");
+            let randomX = Math.floor(Math.random() * 200) - 100;
+            let randomY = Math.floor(Math.random() * 200) - 100;
+            yesBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function showMessage() {
+            let message = "Hey, I appreciate you taking the time to respond! 😊<br><br>"
+                        + "But unfortunately, I won’t be able to make it tomorrow due to unavoidable circumstances. <br><br>"
+                        + "Hope we can plan something soon! 🙌";
+
+            let responseElement = document.getElementById("response");
+            responseElement.innerHTML = message; // Use innerHTML to render the <br> tags
+            responseElement.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
