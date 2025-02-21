@@ -46,11 +46,11 @@
             position: relative;
         }
         .yes-btn {
-            background-color: green;
+            background-color: red;
             color: white;
         }
         .no-btn {
-            background-color: red;
+            background-color: rgb(0, 128, 0);
             color: white;
         }
         .message {
@@ -82,10 +82,11 @@
 <body>
 
     <div class="container">
-        <h2>Do you want me to come tomorrow?</h2>
+        <h2>Do you Love me ? 🥰</h2>
         <div class="buttons">
-            <button class="yes-btn" id="yesBtn" onmouseover="moveButton()" onclick="moveButton()">Yes</button>
-            <button class="no-btn" onclick="showMessage()">No</button>
+            <!--this is movable-->
+            <button class="yes-btn" id="yesBtn" onmouseover="moveButton()">No</button> 
+            <button class="no-btn" onclick="showMessage()">Yes</button>
         </div>
         <p id="response" class="message"></p>
     </div>
@@ -102,8 +103,7 @@
 
         function showMessage() {
             let message = "Hey, I appreciate you taking the time to respond! 😊<br><br>"
-                        + "But unfortunately, I won’t be able to make it tomorrow due to unavoidable circumstances. <br><br>"
-                        + "Hope we can plan something soon! 🙌";
+                        + "I LOVE YOU TOO 💘. <br><br>";
 
             let responseElement = document.getElementById("response");
             responseElement.innerHTML = message; // Use innerHTML to render the <br> tags
